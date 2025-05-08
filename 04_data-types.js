@@ -172,3 +172,35 @@ let value1 = Symbol("programiz");
 let value2 = Symbol("programiz");
 
 console.log(value1 === value2); // false
+
+// ==========  Object  ========== //
+const person = {
+    firstName: "Mostafizur",
+    lastName: "Rahman",
+    age: 25,
+    isProgrammer: true,
+};
+
+console.log(person); 
+/************************** 
+{
+  firstName: 'Mostafizur',
+  lastName: 'Rahman',
+  age: 25,
+  isProgrammer: true
+}
+**************************/
+
+console.log(person.firstName); // Mostafizur
+console.log(person.age); // 25
+
+console.log(typeof person); // object
+
+// ==========  Array  ========== //
+const arr = ["Fuad", "Junnun", "Siam"];
+const ages = [26, 21, 17];
+
+console.log(arr); // [ 'Fuad', 'Junnun', 'Siam' ]
+console.log(ages); // [ 26, 21, 17 ]
+
+console.log(typeof arr); // object
