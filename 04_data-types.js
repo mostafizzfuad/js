@@ -141,3 +141,34 @@ console.log(typeof idNumber); // undefined
 console.log(undefined + 25); // NaN
 console.log(undefined + true); // NaN
 console.log(undefined + "hello"); // undefinedhello
+
+// ==========  null  ========== //
+// In JavaScript, null represents "no value" or "nothing."
+// null: A variable with unknown value can store null. (Null is a special type used as a absence of an object)
+// suppose amra variable er akta value expect korchi, but sekhane variable er value kichu akta define korai lagbe, faka rakha jabe na, sei khetre variable er value null diye define korte pari
+
+let number2 = null;
+console.log(number2); // null
+console.log(typeof number2); // object
+
+// Here, let number = null; indicates that the number variable is set to have no value.
+
+// ==========  BigInt  ========== //
+// BigInt was introduced in a newer version of JavaScript (ES11) and is not supported by many browsers, including Safari.
+let value = 900719925124740998n;
+console.log(value); // 900719925124740998n
+console.log(typeof value); // bigint
+
+// this number is too big for a number data type
+let hh = 900719925124740998;
+console.log(hh); // 900719925124741000
+
+// ==========  Symbol  ========== //
+// A Symbol is a unique and primitive value. This data type was introduced in ES6.
+// When you create a Symbol, JavaScript guarantees that it is distinct from all other symbols, even if they have the same descriptions. For example,
+
+// two symbols with the same description
+let value1 = Symbol("programiz");
+let value2 = Symbol("programiz");
+
+console.log(value1 === value2); // false
