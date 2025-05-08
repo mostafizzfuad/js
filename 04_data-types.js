@@ -101,3 +101,43 @@ console.log(typeof number.toFixed(2)); // string
 // toPrecision()
 console.log(number.toPrecision(5)); // 32.366
 console.log(typeof number.toPrecision(5)); // string
+
+// ==========  String  ========== //
+// string literal
+let str = "Mostafizur"; // single quotes
+let str2 = "Mostafizur"; // double quotes
+let str3 = `Mostafizur`; // backticks
+
+// string constructor
+let str4 = String("Mostafizur");
+let str5 = String(123); // convert number to string
+let str6 = String(3.1416); // convert number to string
+
+console.log(str3, str5, str6);
+// expected output : Mostafizur 123 3.1416
+
+// ==========  Boolean  ========== //
+// boolean literal
+let b1 = true;
+let b2 = false;
+
+// boolean constructor
+let b3 = Boolean(true);
+let b4 = Boolean(false);
+
+console.log(b1, b4); // true false
+
+// convert boolean to number
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+
+// ==========  undefined  ========== //
+// undefined : A variable without value always stores undefined.
+
+let idNumber;
+console.log(idNumber); // undefined
+console.log(typeof idNumber); // undefined
+
+console.log(undefined + 25); // NaN
+console.log(undefined + true); // NaN
+console.log(undefined + "hello"); // undefinedhello
