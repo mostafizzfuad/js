@@ -41,19 +41,6 @@ console.log(arr); // [ 11, 50, 100, 70, 30, 9 ]
 // type of array
 console.log(typeof arr); // object
 
-// ******************* Basic Array Exercise *******************
-let arr = [60, 95, 75, 52, 71, 33];
-
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-}
-
-avg = avg.toFixed(2); // 64.33 (but it's a string)
-// avg = Number.parseFloat(avg); // 64.33 (now it's a number)
-avg = Number(avg); // 64.33 (now it's a number)
-console.log(avg); // 64.33
-
 // ******************* Array Method (Basic) *******************
 // ******************* push() *******************
 // push() : add element in the end
@@ -157,3 +144,199 @@ for (let i = 0; i < students.length; i++) {
 }
 
 // ******************* Exercise: Array *******************
+// ******************** average array elements with two decimal point numbers *******************
+let arr = [60, 95, 75, 52, 71, 33];
+
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+}
+
+avg = avg.toFixed(2); // 64.33 (but it's a string)
+// avg = Number.parseFloat(avg); // 64.33 (now it's a number)
+avg = Number(avg); // 64.33 (now it's a number)
+console.log(avg); // 64.33
+
+// ******************** Reverse an array *******************
+const arr = [10, 50, 80, 90];
+arr.reverse(); // mutate the original array
+console.log(arr); // [ 90, 80, 50, 10 ]
+
+// another way
+/* 
+const numbers = [10, 50, 80, 90];
+const reverseNumbers = [];
+for (const number of numbers) {
+    reverseNumbers.unshift(number);
+}
+console.log(reverseNumbers); // [ 90, 80, 50, 10 ] 
+*/
+
+// ******************** Find the max number in an array *******************
+function maxNumber(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// const numbers = [10, 20, 15, 35, 25, 17];
+const max = maxNumber(numbers);
+console.log(max);
+
+// ******************** Find the max even number in an array *******************
+/* 
+function maxEvenNumber(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max && arr[i] % 2 === 0) {
+            max = arr[i];
+        }
+    }
+
+    if (max % 2 === 0) return max;
+    return "No even number found";
+}
+
+const numbers = [10, 21, 15, 35, 25, 17];
+const evenMax = maxEvenNumber(numbers);
+console.log(evenMax);
+*/
+
+function maxEven(arr) {
+    const evenArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            evenArr.push(arr[i]);
+        }
+    }
+
+    if (evenArr.length === 0) {
+        return "No even number found";
+    }
+
+    let max = evenArr[0];
+    for (let i = 1; i < evenArr.length; i++) {
+        if (evenArr[i] > max) {
+            max = evenArr[i];
+        }
+    }
+    return max;
+}
+
+// const numbers = [10, 20, 15, 35, 26, 17, 8];
+const evenMax = maxEven(numbers);
+console.log(evenMax);
+
+// ******************** Swapping two numbers *******************
+let a = 10;
+let b = 20;
+
+let temp = a;
+a = b;
+b = temp;
+
+console.log(a, b); // 20 10
+
+// another way
+let x = 10;
+let y = 20;
+
+[x, y] = [y, x]; // destructuring assignment
+console.log(x, y); // 20 10
+
+// another way
+let p = 10;
+let q = 20;
+
+p = p - q; // -10
+q = p + q; // 10
+p = q - p; // 20
+
+// ******************** Create a function that will return only even numbers in an array *******************
+function evenNumbers(numbers) {
+    const evenArr = [];
+    for (const number of numbers) {
+        if (number % 2 === 0) {
+            evenArr.push(number);
+        }
+    }
+    return evenArr;
+}
+
+// const numbers = [5, 6, 8, 15, 16, 21];
+const arr = evenNumbers(numbers);
+console.log(arr); // [ 6, 8, 16 ]
+
+// ******************** Calculate the average of the odd numbers in an array *******************
+/* 
+function oddAverage(arr) {
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            sum += arr[i];
+            count++;
+        }
+    }
+    return count === 0 ? "No odd number found" : sum / count;
+}
+const numbers = [10, 20, 7, 21, 26, 19, 8]; // 7 + 21 + 19 = 47 / 3
+const average = oddAverage(numbers);
+console.log(average); 
+*/
+
+// another way
+function oddAverage(arr) {
+    const oddArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 1) {
+            oddArr.push(arr[i]);
+        }
+    }
+
+    if (oddArr.length === 0) {
+        return "No odd number found";
+    }
+
+    let sum = 0;
+    for (let i = 0; i < oddArr.length; i++) {
+        sum += oddArr[i];
+    }
+    const avg = sum / oddArr.length;
+    return avg;
+}
+
+// const numbers = [10, 20, 7, 21, 26, 19, 8]; // 7 + 21 + 19 = 47 / 3
+const average = oddAverage(numbers);
+console.log(average);
+
+// ******************** Remove duplicate items from an array *******************
+/* 
+function removeDuplicate(arr) {
+    const uniqueArr = [];
+    for (const element of arr) {
+        if (!uniqueArr.includes(element)) {
+            uniqueArr.push(element);
+        }
+    }
+    return uniqueArr;
+}
+*/
+
+// another way: using indexOf()
+function removeDuplicate(arr) {
+    const uniqueArr = [];
+    for (const element of arr) {
+        if (uniqueArr.indexOf(element) === -1) {
+            uniqueArr.push(element);
+        }
+    }
+    return uniqueArr;
+}
+
+const numbers = [1, 5, 7, 1, 5, 8, 5, 7];
+console.log(removeDuplicate(numbers)); // [ 1, 5, 7, 8 ]
